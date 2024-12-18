@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Light Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <p onclick="handleDarkMode()"><img src="./images/night-mode.png"></p>
+        <h1 id="text">Light</h1>
+    </div>
+    
+    <script>
+        let container = document.querySelector(".container")
+        let image = document.querySelector("img")
+        let text = document.querySelector("#text")
+        let start = 0
+        function handleDarkMode() {
+            start++
+            container.classList.toggle("active");
+            if(start % 2 == 0){
+                text.innerHTML = "Light"
+                image.src = "./images/night-mode.png"
+            }else if(start % 2 == 1){
+                text.innerHTML = "Dark"
+                image.src = "./images/sun.png"
+            }
+        }
+    </script>
+</body>
+</html>
